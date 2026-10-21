@@ -11,7 +11,7 @@ window.STORE = {
   brand: "Novéa",
   productName: "Applicateur Massant Novéa",
   tagline: "Votre sérum directement à la racine, sans en mettre partout.",
-  email: "contact@novea-shop.fr",          // ← ton adresse e-mail pro
+  email: "nathanciano1@gmail.com",          // ← à remplacer par une adresse pro (ex. contact@ton-domaine.fr)
   delivery: "Livraison offerte en 5 à 10 jours ouvrés", // ← adapte selon ton fournisseur
   freeShippingText: "Livraison offerte en France",
   returnDays: 30,
