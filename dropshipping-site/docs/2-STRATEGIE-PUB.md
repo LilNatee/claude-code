@@ -30,7 +30,7 @@ Une vidéo = 15 à 25 s, filmée au téléphone avec ton échantillon. Pas besoi
 
 **Accroches à tester (les 2 premières secondes font tout) :**
 - « Personne ne parle de cette astuce pour appliquer l'huile de romarin… »
-- « Le truc à 40 € qui a remplacé mon massage du dimanche »
+- « Le truc à 50 € qui a remplacé mon massage du dimanche »
 - « Si tu mets de l'huile sur ton cuir chevelu, regarde ça »
 - « J'ai testé la brosse que tout le monde voit sur TikTok »
 
@@ -81,9 +81,9 @@ OU tu as fait au moins 3 ventes depuis le contenu gratuit.
 1. **TikTok Spark Ads** sur cette vidéo exacte (elle garde ses likes et commentaires = preuve sociale).
 2. Budget : **10 € / jour pendant 3 à 5 jours**, ciblage large France, 18-45 ans, objectif « conversions » (installe le pixel TikTok — voir plan d'action, un bandeau cookies devient alors obligatoire).
 3. Règle de coupe :
-   - Coût par achat **< 12 €** → tu augmentes de 20 % tous les 2 jours.
-   - Coût par achat **12-20 €** → tu gardes, tu testes une autre accroche.
-   - Aucune vente après **25 € dépensés** → tu coupes, tu reviens au contenu organique.
+   - Coût par achat **< 10 €** → tu augmentes de 20 % tous les 2 jours.
+   - Coût par achat **10-15 €** → tu gardes, tu testes une autre accroche.
+   - Aucune vente après **20 € dépensés** → tu coupes, tu reviens au contenu organique.
 
 Meta (Facebook/Instagram) Ads : seulement plus tard, avec les vidéos d'influenceurs qui ont le mieux marché.
 

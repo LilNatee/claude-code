@@ -66,6 +66,37 @@ trouver le produit moins cher quand tu fais du volume. AliExpress sert à compar
 - **DEEE / éco-participation** : en vendant des équipements électriques en France, tu dois t'inscrire auprès d'un
   éco-organisme (ecosystem ou Ecologic) et obtenir un **identifiant unique (IDU)**. Coût faible à ton volume.
 
+## Fiche fournisseur retenue (CJdropshipping)
+
+- **Produit :** peigne/brosse applicateur de sérum électrique — vibration, LED rouge 655 nm, bouton de diffusion, réservoir avec fenêtre de niveau, USB-C
+- **Lien :** https://m.cjdropshipping.com/product/details/1796110886088744960
+- **SKU :** CJYD206092501AZ — variante White-1PCS
+- **Fournisseur :** PREMIUMGOODS Global Limited (Zhejiang, 7 ans, note 4,9/5), aucun litige qualité
+- **Prix produit :** 14,10 $ (⚠️ prix affiché mis à jour en juin 2024 : vérifie le prix réel au panier)
+- **Expédition France :** CJPacket Liquid Line, 8,05 $ + 3,50 $ de TVA payée d'avance (le client ne paie rien à la livraison)
+- **Coût total livré :** **26,93 $**
+- **Stock :** expédié depuis la Chine (stock usine 13 511)
+- **Specs fournisseur :** 3,7 V, entrée 5 V/1 A, 1 W, batterie 260 mAh, PC/ABS, colis 250 × 100 × 50 mm
+- **Dans le colis :** le peigne seul. Pas de câble listé, et pas de notice en français : tu dois en fournir une (PDF par e-mail + carte imprimée dans le colis via CJ, ou demande à CJ de l'imprimer).
+
+### ⚠️ À faire AVANT de commander l'échantillon
+
+Ce même fournisseur a répondu sur une autre de ses fiches : « ce produit n'a pas de certificat CE ».
+Pour un appareil électrique vendu en France, le CE est **obligatoire**. Envoie dans le chat CJ :
+
+> Hello, for SKU CJYD206092501AZ: 1) Do you have CE (EMC + RoHS) certificates? Please send the documents.
+> 2) Is a USB-C cable included? 3) What is the current price and the shipping cost for 1, 2 and 3 pieces to France?
+> 4) Can you add a printed French manual if I provide the PDF?
+
+- **CE fourni** → commande l'échantillon.
+- **Pas de CE** → ne vends pas ce modèle. Cherche une autre fiche ou un autre fournisseur avec certificats.
+
+### Ce que tu ne dois PAS reprendre de la fiche CJ
+
+« Hair growth », « medicine », « drug delivery », « stimule les follicules », « microcourant/EMS ». Ce sont des
+allégations médicales : interdites en pub et sur ton site. Le site parle uniquement de massage, de détente
+et d'application du sérum. Les visuels CJ contiennent ces textes en anglais : utilise tes propres photos.
+
 ## Le prix
 
 ### Repères du marché (France, octobre 2026)
@@ -74,36 +105,38 @@ trouver le produit moins cher quand tu fais du volume. AliExpress sert à compar
 - Boutiques de marque / Nature & Découvertes : **35 à 50 €**
 - Haut de gamme (Breo Scalp3) : **≈ 95 €**
 
-### Prix fixés
+### Prix fixés (mis à jour avec la vraie fiche CJ)
 
 | Offre | Prix TTC | Prix / brosse | Économie affichée |
 |---|---|---|---|
-| 1 brosse | **39,90 €** | 39,90 € | — |
-| 2 brosses | **64,90 €** | 32,45 € | 14,90 € |
-| 3 brosses | **84,90 €** | 28,30 € | 34,80 € |
+| 1 brosse | **49,90 €** | 49,90 € | — |
+| 2 brosses | **84,90 €** | 42,45 € | 14,90 € |
+| 3 brosses | **114,90 €** | 38,30 € | 34,80 € |
 
 Livraison **offerte** (intégrée dans le prix — les gens détestent payer les frais de port).
 
-**Positionnement :** légèrement au-dessus des marketplaces anonymes (tu apportes marque, confiance, service
-client et retours 30 jours), bien en dessous des marques premium. Le bundle à 2 est mis en avant :
-il augmente le panier moyen de ≈ 60 %.
+**Positionnement :** au-dessus des marketplaces anonymes (25-42 €), justifié par un appareil plus complet
+(vibration + LED + bouton de diffusion + USB-C), la marque, le service client et les retours 30 jours ;
+bien en dessous du haut de gamme (≈ 95 €). Le bundle à 2 est mis en avant.
 
 > Pas de « prix barré » inventé (genre ~~79,90 €~~). Depuis 2022, un prix barré doit être le prix le plus bas
 > réellement pratiqué dans les 30 jours précédents. Les économies affichées sur les bundles, elles, sont réelles.
 
-### Calcul de marge (hypothèse : coût livré 12 € / brosse — à vérifier avec ton échantillon)
+### Calcul de marge (coût livré CJ : 26,93 $ ≈ 25 € / brosse)
 
 | | 1 brosse | 2 brosses | 3 brosses |
 |---|---|---|---|
-| Prix de vente | 39,90 € | 64,90 € | 84,90 € |
-| Coût produit livré | − 12,00 € | − 23,00 € | − 33,00 € |
-| Frais Stripe (1,5 % + 0,25 €) | − 0,85 € | − 1,22 € | − 1,52 € |
-| Cotisations URSSAF micro (≈ 12,3 % du CA, vente de marchandises) | − 4,91 € | − 7,98 € | − 10,44 € |
-| **Bénéfice avant pub** | **≈ 22,1 €** | **≈ 32,7 €** | **≈ 39,9 €** |
-| Marge brute (avant URSSAF) | ≈ 68 % | ≈ 63 % | ≈ 59 % |
+| Prix de vente | 49,90 € | 84,90 € | 114,90 € |
+| Coût produit livré (CJ) | − 25,00 € | − 50,00 € | − 75,00 € |
+| Frais Stripe (1,5 % + 0,25 €) | − 1,00 € | − 1,52 € | − 1,97 € |
+| Cotisations URSSAF micro (≈ 12,3 % du CA, vente de marchandises) | − 6,14 € | − 10,44 € | − 14,13 € |
+| **Bénéfice avant pub** | **≈ 17,8 €** | **≈ 22,9 €** | **≈ 23,8 €** |
 
-**Ton chiffre clé :** tu peux dépenser **jusqu'à ≈ 20 € de pub par vente** avant de perdre de l'argent.
-Vise un coût d'acquisition < 12 € pour gagner ≈ 10 €+ net par commande.
+Les lots de 2 et 3 seront probablement un peu plus rentables : demande à CJ le prix d'expédition
+pour 2 ou 3 pièces dans le même colis (souvent bien moins que 2 × ou 3 × le prix unitaire).
+
+**Ton chiffre clé :** tu peux dépenser **jusqu'à ≈ 15 € de pub par vente** avant de perdre de l'argent.
+C'est plus serré qu'avec un produit à 12 € : d'où la stratégie 100 % organique au départ.
 
 Prévois aussi ≈ 5 % de retours/remboursements.
 
