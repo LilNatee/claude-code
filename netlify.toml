@@ -1,0 +1,5 @@
+# Déploiement Netlify de la boutique Racinéa (site statique, pas de build)
+[build]
+  base = "dropshipping-site/site"
+  publish = "."
+  command = ""

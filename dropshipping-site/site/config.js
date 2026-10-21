@@ -32,7 +32,7 @@ window.STORE = {
       subtitle: "Pour vous",
       price: 24.9,
       badge: "",
-      paymentLink: "https://buy.stripe.com/REMPLACER_LIEN_1"
+      paymentLink: "https://buy.stripe.com/test_cNi6oG4Rlb3Eg65gg404800"
     },
     {
       id: "duo",
@@ -41,7 +41,7 @@ window.STORE = {
       subtitle: "Une pour vous, une à offrir",
       price: 39.9,
       badge: "Le plus choisi",
-      paymentLink: "https://buy.stripe.com/REMPLACER_LIEN_2"
+      paymentLink: "https://buy.stripe.com/test_fZubJ0dnR5Jk4nn1la04801"
     },
     {
       id: "trio",
@@ -50,7 +50,7 @@ window.STORE = {
       subtitle: "Pour toute la famille",
       price: 49.9,
       badge: "Meilleure économie",
-      paymentLink: "https://buy.stripe.com/REMPLACER_LIEN_3"
+      paymentLink: "https://buy.stripe.com/test_cNi8wO1F9fjU2ff6Fu04802"
     }
   ],
 

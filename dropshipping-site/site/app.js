@@ -75,6 +75,14 @@
   });
   refresh();
 
+  // Bandeau visible tant que les liens Stripe sont des liens de test
+  if (S.offers.some(function (o) { return (o.paymentLink || "").indexOf("/test_") !== -1; })) {
+    var bar = document.createElement("div");
+    bar.className = "test-banner";
+    bar.textContent = "Mode test : aucun paiement réel n'est encaissé. Carte de test : 4242 4242 4242 4242.";
+    document.body.insertBefore(bar, document.body.firstChild);
+  }
+
   function buy() {
     var link = selected.paymentLink || "";
     if (link.indexOf("REMPLACER") !== -1 || !/^https:\/\//.test(link)) {

@@ -31,6 +31,12 @@ h1, h2, h3 { line-height: 1.2; margin: 0 0 .5em; letter-spacing: -.01em; }
 .container--narrow { max-width: 760px; }
 .muted { color: var(--muted); }
 
+/* Bandeau mode test */
+.test-banner {
+  background: #fff3cd; color: #6b4b12; border-bottom: 1px solid #f2d9a6;
+  font-size: .82rem; text-align: center; padding: 6px 16px;
+}
+
 /* Bandeau */
 .announce {
   background: var(--brand); color: var(--brand-ink);
