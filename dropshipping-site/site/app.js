@@ -16,15 +16,30 @@
   var year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 
-  // Galerie
-  var main = document.getElementById("mainImg");
-  document.querySelectorAll(".thumb").forEach(function (t) {
-    t.addEventListener("click", function () {
-      main.src = t.getAttribute("data-src");
-      document.querySelectorAll(".thumb").forEach(function (x) { x.classList.remove("is-active"); });
-      t.classList.add("is-active");
-    });
+  // Galerie : vidéo (optionnelle) puis photos, depuis config.js
+  var main = document.getElementById("galleryMain");
+  var thumbs = document.getElementById("thumbs");
+  var media = [];
+  if (S.video) media.push({ type: "video", src: S.video, poster: S.videoPoster || S.photos[0] });
+  (S.photos || []).forEach(function (src) { media.push({ type: "img", src: src }); });
+
+  function show(i) {
+    var m = media[i];
+    main.innerHTML = m.type === "video"
+      ? '<video src="' + m.src + '" poster="' + (m.poster || "") + '" autoplay muted loop playsinline controls></video>'
+      : '<img src="' + m.src + '" alt="' + S.productName + '">';
+    thumbs.querySelectorAll(".thumb").forEach(function (t, j) { t.classList.toggle("is-active", j === i); });
+  }
+  thumbs.innerHTML = media.length > 1 ? media.map(function (m, i) {
+    var inner = m.type === "video"
+      ? '<img src="' + (m.poster || "") + '" alt=""><span class="thumb__play">▶</span>'
+      : '<img src="' + m.src + '" alt="">';
+    return '<button type="button" class="thumb" aria-label="' + (m.type === "video" ? "Vidéo" : "Photo " + (i + 1)) + '">' + inner + "</button>";
+  }).join("") : "";
+  thumbs.querySelectorAll(".thumb").forEach(function (t, i) {
+    t.addEventListener("click", function () { show(i); });
   });
+  if (media.length) show(0);
 
   // Offres
   var form = document.getElementById("offerForm");
@@ -40,7 +55,7 @@
         (o.badge ? '<span class="offer__badge">' + o.badge + "</span>" : "") +
         '<span class="offer__main"><strong>' + o.title + "</strong><small>" + o.subtitle + "</small></span>" +
         '<span class="offer__price"><strong>' + euro(o.price) + "</strong>" +
-          (o.qty > 1 ? "<small>soit " + euro(unit) + " / brosse</small>" : "<small>Livraison offerte</small>") +
+          (o.qty > 1 ? "<small>soit " + euro(unit) + " / " + (S.unitLabel || "pièce") + "</small>" : "<small>Livraison offerte</small>") +
           (saving > 0.01 ? '<em>Économisez ' + euro(saving) + "</em>" : "") +
         "</span>" +
       "</label>"
@@ -97,7 +112,7 @@
     box.innerHTML =
       '<div class="reviews-empty">' +
         "<p><strong>Soyez parmi les premiers à donner votre avis.</strong></p>" +
-        "<p>Novéa vient d'être lancé. Chaque avis publié ici provient d'un client ayant réellement acheté et reçu sa brosse. " +
+        "<p>Novéa vient d'être lancé. Chaque avis publié ici provient d'un client ayant réellement acheté et reçu sa commande. " +
         "Après votre commande, vous recevrez une invitation à partager votre expérience.</p>" +
       "</div>";
     return;

@@ -9,7 +9,7 @@ Coche au fur et à mesure. Temps estimé pour être en ligne : **1 à 2 semaines
 - [ ] Créer ta **micro-entreprise** sur [formalites.entreprises.gouv.fr](https://formalites.entreprises.gouv.fr) — activité : *vente à distance sur catalogue spécialisé / commerce de détail en ligne*. Tu reçois ton SIRET sous ≈ 1-2 semaines.
 - [ ] Ouvrir un **compte bancaire dédié** (gratuit en banque en ligne). Obligatoire dès 10 000 € de CA 2 années de suite, mais fais-le tout de suite : c'est plus simple.
 - [ ] Choisir un **médiateur de la consommation** (obligatoire, ≈ 50-100 €/an, ex. CNPM, Médicys…) — à indiquer dans les CGV.
-- [ ] S'inscrire auprès d'un éco-organisme DEEE (**ecosystem** ou **Ecologic**) pour obtenir ton **IDU** (appareil électrique).
+- [ ] ~~Inscription DEEE~~ : pas nécessaire pour l'applicateur manuel (aucune électronique). À faire seulement si tu ajoutes un jour une version électrique.
 - [ ] Vérifier la disponibilité du nom « Novéa » sur [data.inpi.fr](https://data.inpi.fr) (classe 8/21/3). S'il est pris, change-le dans `config.js` et dans les fichiers HTML (rechercher/remplacer « Novéa »).
 
 ## Étape 2 — Fournisseur et échantillon (jours 1 à 10, ≈ 25 €)
@@ -24,9 +24,9 @@ Coche au fur et à mesure. Temps estimé pour être en ligne : **1 à 2 semaines
 
 ## Étape 3 — Photos et vidéos (jour de réception, 0 €)
 
-- [ ] Prendre **5 à 6 photos** sur fond clair (lumière du jour, près d'une fenêtre) : produit seul, en main, réservoir, lumière allumée, dans la boîte, en situation.
+- [ ] Prendre **5 à 6 photos** sur fond clair (lumière du jour, près d'une fenêtre) : produit seul, en main, remplissage du réservoir, embouts en gros plan, dans la boîte, en situation sur cheveux.
 - [ ] Recadrer en carré (1200×1200), enregistrer dans `site/assets/` (`photo-1.jpg`, `photo-2.jpg`…).
-- [ ] Dans `site/index.html`, remplacer `assets/product.svg` par `assets/photo-1.jpg` et décommenter/ajouter les miniatures.
+- [ ] Dans `site/config.js`, lister les photos : `photos: ["assets/photo-1.jpg", "assets/photo-2.jpg", ...]` et, si tu as une vidéo, `video: "assets/video.mp4"` (MP4, moins de 10 Mo, format carré ou vertical).
 - [ ] Filmer **20 vidéos courtes d'un coup** (voir `2-STRATEGIE-PUB.md`) — tu auras du stock pour 1 semaine.
 
 > Tu peux aussi utiliser les photos fournies par CJ au début, mais tes propres photos inspirent beaucoup plus confiance.
@@ -34,7 +34,7 @@ Coche au fur et à mesure. Temps estimé pour être en ligne : **1 à 2 semaines
 ## Étape 4 — Paiement Stripe (1 h, 0 € d'abonnement)
 
 - [ ] Créer un compte sur [stripe.com](https://stripe.com) (pays : France), activer le compte avec ton SIRET et ton IBAN.
-- [ ] Dans **Catalogue de produits** : créer le produit « Brosse massante Novéa LED » avec **3 prix** : 39,90 € / 64,90 € (lot de 2) / 84,90 € (lot de 3).
+- [ ] Dans **Catalogue de produits** : créer le produit « Applicateur Massant Novéa » avec **3 prix** : 24,90 € / 39,90 € (lot de 2) / 49,90 € (lot de 3).
 - [ ] Créer **3 Liens de paiement** (*Payment Links*), un par prix. Pour chacun, dans les options :
   - ✅ Collecter l'**adresse de livraison** → pays autorisés : **France** (ajoute Belgique/Suisse plus tard si tu veux)
   - ✅ Exiger le **numéro de téléphone** (utile au transporteur)
@@ -69,7 +69,7 @@ Coche au fur et à mesure. Temps estimé pour être en ligne : **1 à 2 semaines
 3. Quand CJ te donne le **numéro de suivi** (1-3 jours), envoie-le au client :
 
    > Bonjour [prénom],
-   > Bonne nouvelle : votre brosse Novéa est en route ! 📦
+   > Bonne nouvelle : votre applicateur Novéa est en route ! 📦
    > Suivi : [lien de suivi]
    > Livraison estimée : [date]. Une question ? Répondez simplement à cet e-mail.
    > L'équipe Novéa
@@ -83,7 +83,7 @@ Coche au fur et à mesure. Temps estimé pour être en ligne : **1 à 2 semaines
 - [ ] Créer un **Google Form** « Votre avis sur Novéa » (note 1-5, texte, prénom + initiale, ville, accord pour publication).
 - [ ] **J+10 après livraison**, envoyer à chaque client :
 
-  > Bonjour [prénom], vous utilisez votre brosse depuis quelques jours : qu'en pensez-vous ?
+  > Bonjour [prénom], vous utilisez votre applicateur depuis quelques jours : qu'en pensez-vous ?
   > Votre avis (30 secondes) aide énormément une jeune marque : [lien Google Form]
   > Pour vous remercier, voici -10 % pour un proche : MERCI10
 

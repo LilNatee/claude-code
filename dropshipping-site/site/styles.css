@@ -72,13 +72,20 @@ h1, h2, h3 { line-height: 1.2; margin: 0 0 .5em; letter-spacing: -.01em; }
   border-radius: var(--radius); aspect-ratio: 1; overflow: hidden;
   display: grid; place-items: center;
 }
-.gallery__main img { width: 100%; height: 100%; object-fit: contain; }
+.gallery__main img, .gallery__main video { width: 100%; height: 100%; object-fit: contain; background: var(--surface); }
 .gallery__thumbs { display: flex; gap: 10px; margin-top: 12px; }
 .thumb {
   width: 72px; height: 72px; padding: 4px; border-radius: 10px; cursor: pointer;
   background: var(--surface); border: 2px solid var(--line);
 }
+.thumb { position: relative; overflow: hidden; }
+.thumb img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; }
+.thumb__play {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  color: #fff; font-size: 1.2rem; background: rgba(0, 0, 0, .35); border-radius: 6px;
+}
 .thumb.is-active { border-color: var(--brand); }
+.gallery__thumbs { flex-wrap: wrap; }
 
 .buybox h1 { font-size: clamp(1.7rem, 3vw, 2.3rem); }
 .lead { font-size: 1.1rem; color: var(--muted); margin: 0 0 16px; }

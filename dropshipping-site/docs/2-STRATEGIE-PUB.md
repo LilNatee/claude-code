@@ -9,9 +9,19 @@ l'argent **que** derrière une vidéo qui a déjà prouvé qu'elle marche.
 |---|---|
 | 2 échantillons fournisseur | ≈ 25 € |
 | Nom de domaine (.fr / .com, 1 an) | ≈ 10 € |
-| 8 à 10 brosses offertes à des micro-influenceurs/testeurs | ≈ 100-120 € |
+| 8 à 10 applicateurs offerts à des micro-influenceurs/testeurs | ≈ 90-110 € |
 | Pub payante (seulement si une vidéo organique perce) | 0 à 100 € |
 | Hébergement, Stripe, TikTok, Pinterest, Google | 0 € |
+
+## ⚠️ Vidéos TikTok : uniquement du contenu que tu as le droit d'utiliser
+
+Ne reposte pas les vidéos d'autres créateurs TikTok, même pour un produit similaire :
+- c'est leur contenu (droit d'auteur) : signalement → vidéo supprimée, avertissement sur ton compte ;
+- TikTok détecte le contenu « non original » et ne le montre à personne (0 vue) ;
+- si la vidéo montre un autre produit que le tien (ex. une version électrique), c'est de la pub trompeuse.
+
+**Ce que tu peux utiliser dès aujourd'hui :** la vidéo fournie par CJ sur la fiche produit (fournie aux revendeurs pour ça),
+remontée avec ton propre texte et ta musique ; puis **tes propres vidéos** dès réception de l'échantillon — ce sont elles qui feront des vues.
 
 ## Phase 1 — Gratuit (semaines 1 à 4)
 
@@ -22,17 +32,17 @@ Une vidéo = 15 à 25 s, filmée au téléphone avec ton échantillon. Pas besoi
 
 **Les 5 formats qui marchent dans cette niche :**
 
-1. **ASMR / satisfaisant** : gros plan sur la brosse qui vibre, la lumière rouge, le sérum qui sort. Aucun texte. Son naturel.
-2. **Routine du soir** : « Ma routine cuir chevelu en 5 min » — huile de romarin → brosse → serviette.
-3. **Avant / pendant (sans promesse)** : « J'ai arrêté de m'en mettre plein les mains » — huile appliquée au doigt vs avec la brosse.
+1. **ASMR / satisfaisant** : gros plan sur l'huile qu'on verse dans le réservoir, puis sur les embouts qui déposent l'huile à la racine, raie par raie. Aucun texte. Son naturel.
+2. **Routine du soir** : « Ma routine cuir chevelu en 5 min » — huile de romarin → applicateur → massage → serviette.
+3. **Avant / pendant (sans promesse)** : « J'ai arrêté de m'en mettre plein les mains » — huile appliquée au doigt vs avec l'applicateur.
 4. **Point de vue (POV)** : « POV : tu as trouvé le cadeau parfait pour ta mère / ta copine ».
 5. **Réponse à un commentaire** : dès qu'on te pose une question, réponds en vidéo (l'algorithme adore).
 
 **Accroches à tester (les 2 premières secondes font tout) :**
 - « Personne ne parle de cette astuce pour appliquer l'huile de romarin… »
-- « Le truc à 50 € qui a remplacé mon massage du dimanche »
+- « Le truc à 25 € qui m'a fait arrêter de gaspiller mon huile de romarin »
 - « Si tu mets de l'huile sur ton cuir chevelu, regarde ça »
-- « J'ai testé la brosse que tout le monde voit sur TikTok »
+- « J'ai testé l'applicateur que tout le monde voit sur TikTok »
 
 Lien du site dans la bio (débloqué à 1 000 abonnés ; en attendant : « lien dans mon profil Instagram » ou
 mets le nom du site en texte à l'écran).
@@ -51,7 +61,7 @@ Chaque vidéo TikTok est republiée (sans le logo TikTok — utilise l'export sa
 
 Google affiche gratuitement des produits dans l'onglet Shopping (« fiches gratuites »).
 Crée un compte **Google Merchant Center**, ajoute ton produit manuellement (titre, photo, prix, lien).
-Titre conseillé : `Brosse massante cuir chevelu électrique LED avec applicateur de sérum – rechargeable`.
+Titre conseillé : `Applicateur huile et sérum cuir chevelu – embouts massants, réservoir 30 ml`.
 
 ### 4. Micro-influenceurs en échange de produit (≈ 100-120 €)
 
@@ -61,7 +71,7 @@ Titre conseillé : `Brosse massante cuir chevelu électrique LED avec applicateu
 - Message type :
 
   > Bonjour [prénom] ! J'adore ta routine cheveux [détail précis d'une de ses vidéos]. Je lance Novéa, une
-  > petite marque française de brosse massante avec applicateur de sérum. J'aimerais t'en offrir une, sans
+  > petite marque d'applicateur massant pour sérums et huiles capillaires. J'aimerais t'en offrir une, sans
   > aucune obligation. Si elle te plaît et que tu en parles, je te donne en plus un code -15 % pour ta
   > communauté. Ça te dit ?
 
@@ -81,15 +91,15 @@ OU tu as fait au moins 3 ventes depuis le contenu gratuit.
 1. **TikTok Spark Ads** sur cette vidéo exacte (elle garde ses likes et commentaires = preuve sociale).
 2. Budget : **10 € / jour pendant 3 à 5 jours**, ciblage large France, 18-45 ans, objectif « conversions » (installe le pixel TikTok — voir plan d'action, un bandeau cookies devient alors obligatoire).
 3. Règle de coupe :
-   - Coût par achat **< 10 €** → tu augmentes de 20 % tous les 2 jours.
-   - Coût par achat **10-15 €** → tu gardes, tu testes une autre accroche.
-   - Aucune vente après **20 € dépensés** → tu coupes, tu reviens au contenu organique.
+   - Coût par achat **< 5 €** → tu augmentes de 20 % tous les 2 jours.
+   - Coût par achat **5-7 €** → tu gardes, tu testes une autre accroche.
+   - Aucune vente après **15 € dépensés** → tu coupes, tu reviens au contenu organique.
 
 Meta (Facebook/Instagram) Ads : seulement plus tard, avec les vidéos d'influenceurs qui ont le mieux marché.
 
 ## Leviers gratuits pour augmenter le panier et fidéliser
 
-- **Bundle 2 brosses mis en avant** (déjà sur le site) : angle « une pour vous, une à offrir ». Pousse-le fort en novembre-décembre (Black Friday, Noël, puis Fête des mères).
+- **Bundle 2 applicateurs mis en avant** (déjà sur le site) : angle « une pour vous, une à offrir ». Pousse-le fort en novembre-décembre (Black Friday, Noël, puis Fête des mères).
 - **Code promo** influenceurs (créé dans Stripe, voir plan d'action) : te permet de savoir qui vend.
 - **E-mail J+10** demandant un avis + code -10 % pour un ami.
 
@@ -99,6 +109,6 @@ Meta (Facebook/Instagram) Ads : seulement plus tard, avec les vidéos d'influenc
 |---|---|
 | 1 | Échantillon reçu, 20 vidéos filmées d'un coup, comptes créés, Merchant Center |
 | 2 | 2-3 vidéos/jour, 50 messages d'influenceurs envoyés |
-| 3 | Envoi des brosses aux influenceurs, on continue le contenu |
+| 3 | Envoi des applicateurs aux influenceurs, on continue le contenu |
 | 4 | Analyse : quelle vidéo a le plus de vues/ventes ? → Spark Ads dessus si critère atteint |
 | 5+ | On duplique ce qui marche (même format, nouvelles accroches) |

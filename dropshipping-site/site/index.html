@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Novéa — Brosse massante cuir chevelu LED avec réservoir à sérum</title>
-  <meta name="description" content="La brosse massante Novéa : massage du cuir chevelu, applicateur de sérum intégré et lumière LED. Livraison offerte, retours 30 jours, paiement sécurisé.">
-  <meta property="og:title" content="Novéa — Le rituel cuir chevelu en 5 minutes">
-  <meta property="og:description" content="Massage, applicateur de sérum et lumière LED dans une seule brosse. Livraison offerte.">
+  <title>Novéa — Applicateur de sérum massant pour cuir chevelu</title>
+  <meta name="description" content="L'applicateur massant Novéa dépose votre sérum ou votre huile directement à la racine, sans gaspillage. Livraison offerte, retours 30 jours, paiement sécurisé.">
+  <meta property="og:title" content="Novéa — Le sérum à la racine, sans en mettre partout">
+  <meta property="og:description" content="L'applicateur massant qui dépose votre sérum à la racine. Livraison offerte.">
   <meta property="og:image" content="assets/product.svg">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
@@ -32,28 +32,21 @@
     <section class="hero" id="acheter">
       <div class="container hero__grid">
         <div class="gallery">
-          <div class="gallery__main">
-            <!-- Remplace par tes vraies photos produit (assets/photo-1.jpg, etc.) -->
-            <img id="mainImg" src="assets/product.svg" alt="Brosse massante Novéa LED" width="560" height="560">
-          </div>
-          <div class="gallery__thumbs" id="thumbs">
-            <button class="thumb is-active" data-src="assets/product.svg" aria-label="Photo 1"><img src="assets/product.svg" alt=""></button>
-            <!-- Ajoute ici d'autres photos :
-            <button class="thumb" data-src="assets/photo-2.jpg" aria-label="Photo 2"><img src="assets/photo-2.jpg" alt=""></button>
-            -->
-          </div>
+          <!-- Photos et vidéo : se règlent dans config.js (photos, video) -->
+          <div class="gallery__main" id="galleryMain"></div>
+          <div class="gallery__thumbs" id="thumbs"></div>
         </div>
 
         <div class="buybox">
           <div class="rating-line" id="ratingLine"></div>
-          <h1 data-store="productName">Brosse Massante Novéa LED</h1>
+          <h1 data-store="productName">Applicateur Massant Novéa</h1>
           <p class="lead" data-store="tagline"></p>
 
           <ul class="checks">
-            <li>Massage par vibrations haute fréquence</li>
-            <li>Réservoir à sérum avec bouton de diffusion</li>
-            <li>Lumière LED rouge douce</li>
-            <li>Rechargeable USB-C, sans fil</li>
+            <li>Dépose le sérum ou l'huile directement à la racine</li>
+            <li>15 embouts diffuseurs + 6 picots de massage</li>
+            <li>Réservoir de 30 ml, facile à remplir et à nettoyer</li>
+            <li>Sans pile ni recharge, utilisable sous la douche</li>
           </ul>
 
           <form id="offerForm" class="offers" aria-label="Choisissez votre offre"></form>
@@ -81,24 +74,24 @@
         <h2 class="section__title">Pourquoi vous allez l'adorer</h2>
         <div class="cards">
           <article class="card">
-            <div class="card__icon">〰️</div>
-            <h3>Un vrai moment de détente</h3>
-            <p>Les picots souples et les vibrations massent le cuir chevelu en douceur. Idéal après une longue journée.</p>
-          </article>
-          <article class="card">
             <div class="card__icon">💧</div>
-            <h3>Zéro gaspillage de sérum</h3>
-            <p>Le réservoir diffuse votre sérum ou votre huile directement à la racine, de façon homogène. Fini les mains grasses.</p>
+            <h3>Le sérum à la racine</h3>
+            <p>Les 15 embouts déposent le produit directement sur le cuir chevelu, pas sur les longueurs. Chaque goutte va là où vous la voulez.</p>
           </article>
           <article class="card">
-            <div class="card__icon">🔴</div>
-            <h3>Lumière LED rouge</h3>
-            <p>Une lumière douce qui accompagne votre rituel bien-être, pour une routine agréable et régulière.</p>
+            <div class="card__icon">🤲</div>
+            <h3>Fini les mains grasses</h3>
+            <p>Plus besoin d'appliquer l'huile avec les doigts. Moins de gaspillage, une application homogène, des mains propres.</p>
           </article>
           <article class="card">
-            <div class="card__icon">🔋</div>
-            <h3>Pratique au quotidien</h3>
-            <p>Compacte, sans fil et rechargeable en USB-C. Elle se glisse dans une trousse de toilette ou une valise.</p>
+            <div class="card__icon">〰️</div>
+            <h3>Un massage en prime</h3>
+            <p>Les 6 picots arrondis massent le cuir chevelu pendant l'application. Un petit moment de détente à chaque utilisation.</p>
+          </article>
+          <article class="card">
+            <div class="card__icon">🧳</div>
+            <h3>Rien à recharger</h3>
+            <p>Sans pile ni batterie, il s'utilise sur cheveux secs ou mouillés. Format mini (6 cm) qui se glisse dans une trousse de toilette.</p>
           </article>
         </div>
       </div>
@@ -109,9 +102,9 @@
       <div class="container">
         <h2 class="section__title">Simple comme 1, 2, 3</h2>
         <ol class="steps">
-          <li><span>1</span><h3>Remplissez</h3><p>Versez quelques gouttes de votre sérum ou huile préféré dans le réservoir.</p></li>
-          <li><span>2</span><h3>Massez</h3><p>Allumez, appuyez sur le bouton pour diffuser le sérum et passez la brosse sur le cuir chevelu, raie par raie.</p></li>
-          <li><span>3</span><h3>Profitez</h3><p>5 minutes suffisent. Répétez 3 à 4 fois par semaine pour en faire un rituel.</p></li>
+          <li><span>1</span><h3>Remplissez</h3><p>Dévissez, versez votre sérum ou votre huile dans le réservoir (ouverture large de 16 mm), revissez.</p></li>
+          <li><span>2</span><h3>Appliquez</h3><p>Posez l'applicateur sur le cuir chevelu et pressez doucement le capuchon souple pour diffuser le produit, zone par zone.</p></li>
+          <li><span>3</span><h3>Massez</h3><p>Faites de petits mouvements circulaires pour répartir le produit. Rincez l'applicateur à l'eau tiède après usage.</p></li>
         </ol>
       </div>
     </section>
@@ -124,12 +117,14 @@
           <p class="muted">Tout ce qu'il faut savoir avant de commander.</p>
         </div>
         <table>
-          <tr><th>Massage</th><td>Vibrations haute fréquence (jusqu'à 12 000 / min)</td></tr>
-          <tr><th>Réservoir</th><td>Rechargeable, avec fenêtre de niveau et bouton de diffusion. Compatible sérums et huiles fluides</td></tr>
-          <tr><th>Lumière</th><td>LED rouge (655 nm)</td></tr>
-          <tr><th>Batterie</th><td>260 mAh, recharge USB-C</td></tr>
-          <tr><th>Picots</th><td>Picots arrondis qui déposent le sérum à la racine</td></tr>
-          <tr><th>Dans la boîte</th><td>1 brosse, 1 notice en français</td></tr>
+          <tr><th>Type</th><td>Applicateur manuel, sans pile ni batterie</td></tr>
+          <tr><th>Réservoir</th><td>30 ml, ouverture de remplissage de 16 mm</td></tr>
+          <tr><th>Embouts</th><td>15 embouts diffuseurs + 6 picots de massage arrondis</td></tr>
+          <tr><th>Diffusion</th><td>Capuchon souple à presser pour doser le produit</td></tr>
+          <tr><th>Utilisation</th><td>Cheveux secs ou mouillés, compatible sérums et huiles fluides</td></tr>
+          <tr><th>Dimensions</th><td>5,8 × 5,8 × 6 cm</td></tr>
+          <tr><th>Matière</th><td>Plastique ABS</td></tr>
+          <tr><th>Dans la boîte</th><td>1 applicateur, 1 notice d'utilisation</td></tr>
         </table>
       </div>
     </section>
@@ -148,7 +143,7 @@
         <div class="guarantee__seal">30<small>jours</small></div>
         <div>
           <h2>Satisfait ou remboursé</h2>
-          <p>Vous avez 30 jours après réception pour tester votre brosse. Si elle ne vous convient pas, écrivez-nous : on vous rembourse, sans justification. C'est aussi simple que ça.</p>
+          <p>Vous avez 30 jours après réception pour tester votre applicateur. S'il ne vous convient pas, écrivez-nous : on vous rembourse, sans justification. C'est aussi simple que ça.</p>
         </div>
       </div>
     </section>
@@ -160,8 +155,9 @@
         <details><summary>Quand vais-je recevoir ma commande ?</summary><p>Votre commande est préparée sous 24 à 48 h. <span data-store="delivery"></span>. Vous recevez un numéro de suivi par e-mail dès l'expédition.</p></details>
         <details><summary>La livraison est-elle vraiment gratuite ?</summary><p>Oui, la livraison est offerte pour toute commande en France métropolitaine, sans minimum d'achat.</p></details>
         <details><summary>Quel sérum ou quelle huile utiliser ?</summary><p>Tous les sérums et huiles capillaires fluides conviennent (ricin dilué, romarin, argan, sérums du commerce…). Les produits très épais peuvent être dilués.</p></details>
-        <details><summary>Est-ce que ça fait repousser les cheveux ?</summary><p>Non, nous ne faisons pas cette promesse. La brosse Novéa est un accessoire de massage et de bien-être qui facilite l'application de vos soins. Pour une chute de cheveux, consultez un dermatologue.</p></details>
+        <details><summary>Est-ce que ça fait repousser les cheveux ?</summary><p>Non, nous ne faisons pas cette promesse. L'applicateur Novéa est un accessoire qui facilite l'application de vos soins et masse le cuir chevelu. Pour une chute de cheveux, consultez un dermatologue.</p></details>
         <details><summary>Comment retourner un produit ?</summary><p>Écrivez-nous à <a data-store-email href="#"></a> dans les 30 jours suivant la réception. Nous vous indiquons la marche à suivre et vous remboursons dès réception du retour.</p></details>
+        <details><summary>Comment le nettoyer ?</summary><p>Videz le réservoir, rincez à l'eau tiède avec une goutte de savon doux, laissez sécher à l'air libre. La large ouverture rend le nettoyage très simple.</p></details>
         <details><summary>Le paiement est-il sécurisé ?</summary><p>Oui. Le paiement est géré par Stripe, utilisé par des millions d'entreprises. Nous n'avons jamais accès à vos données bancaires.</p></details>
         <details><summary>Comment vous contacter ?</summary><p>Par e-mail à <a data-store-email href="#"></a>. Nous répondons sous 24 h ouvrées.</p></details>
       </div>
@@ -170,7 +166,7 @@
     <!-- CTA FINAL -->
     <section class="section final-cta">
       <div class="container">
-        <h2>Offrez-vous 5 minutes de détente par jour</h2>
+        <h2>Votre sérum, enfin là où il doit aller</h2>
         <a href="#acheter" class="btn btn--big">Choisir mon offre</a>
       </div>
     </section>

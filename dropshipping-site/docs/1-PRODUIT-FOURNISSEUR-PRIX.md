@@ -3,6 +3,37 @@
 > Recherche réalisée en octobre 2026. Les prix fournisseurs changent souvent :
 > **vérifie chaque chiffre marqué « à vérifier » avant de commander.**
 
+## ✅ Décision finale : applicateur MANUEL (mis à jour)
+
+Après comparaison des deux fiches CJ, on lance avec **l'applicateur manuel** ; la version électrique viendra
+plus tard comme modèle « Pro », une fois des avis récoltés et un fournisseur **avec certificat CE** trouvé.
+
+| | |
+|---|---|
+| Fiche CJ | https://m.cjdropshipping.com/product/details/1422744344611393536 |
+| SKU | CJJT123875103CX — variante Black |
+| Produit | Applicateur manuel, ABS, 5,8 × 5,8 × 6 cm, réservoir 30 ml, ouverture 16 mm, 15 embouts diffuseurs + 6 picots de massage, capuchon souple à presser, sans pile |
+| Prix produit | 4,05 $ (mis à jour le 4 septembre 2026), aucun litige qualité, 388 boutiques le listent |
+| Expédition | **CJPacket Ordinary** : 4,48 $ + 3,50 $ de TVA payée d'avance → client ne paie rien à la livraison, **4-10 jours** |
+| **Coût total livré** | **12,03 $ ≈ 11 €** |
+| À éviter | CJPacket Eub (12-50 j, dédouanement à la charge du client) |
+| CE | Non requis (pas un appareil électrique). La sécurité générale des produits (GPSR) s'applique quand même : ton nom/adresse de contact doit figurer sur l'emballage ou un document joint. |
+
+### Prix et marges (applicateur manuel)
+
+| | 1 applicateur | 2 applicateurs | 3 applicateurs |
+|---|---|---|---|
+| Prix de vente | **24,90 €** | **39,90 €** | **49,90 €** |
+| Coût livré (CJ) | − 11,00 € | − 22,00 € | − 33,00 € |
+| Frais Stripe | − 0,62 € | − 0,85 € | − 1,00 € |
+| URSSAF micro (≈ 12,3 %) | − 3,06 € | − 4,91 € | − 6,14 € |
+| **Bénéfice avant pub** | **≈ 10,2 €** | **≈ 12,1 €** | **≈ 9,8 €** |
+
+Demande à CJ le prix d'expédition pour 2-3 pièces dans un même colis : les lots deviennent nettement plus rentables.
+**Chiffre clé :** pub payante seulement si le coût par vente reste **sous ≈ 7 €**. Au départ : 100 % organique.
+
+> Les sections ci-dessous (version électrique, prix à 49,90 €) sont conservées pour la future version « Pro ».
+
 ## Le produit retenu
 
 **Brosse électrique de massage du cuir chevelu, avec réservoir à sérum/huile et lumière LED rouge.**

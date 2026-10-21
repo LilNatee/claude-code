@@ -9,39 +9,46 @@
  */
 window.STORE = {
   brand: "Novéa",
-  productName: "Brosse Massante Novéa LED",
-  tagline: "Le rituel cuir chevelu qui détend en 5 minutes par jour.",
+  productName: "Applicateur Massant Novéa",
+  tagline: "Votre sérum directement à la racine, sans en mettre partout.",
   email: "contact@novea-shop.fr",          // ← ton adresse e-mail pro
-  delivery: "Livraison offerte en 7 à 12 jours ouvrés", // ← adapte selon ton fournisseur
+  delivery: "Livraison offerte en 5 à 10 jours ouvrés", // ← adapte selon ton fournisseur
   freeShippingText: "Livraison offerte en France",
   returnDays: 30,
+  unitLabel: "pièce",
+
+  // Photos de la galerie (la 1re est la principale). Mets tes fichiers dans assets/.
+  photos: ["assets/product.svg"],
+  // Vidéo produit (optionnelle) : "assets/video.mp4". Laisse "" pour ne pas en afficher.
+  video: "",
+  videoPoster: "", // image affichée avant lecture (par défaut : 1re photo)
 
   // Offres (bundles). Le prix est en euros TTC.
   offers: [
     {
       id: "solo",
       qty: 1,
-      title: "1 brosse",
+      title: "1 applicateur",
       subtitle: "Pour vous",
-      price: 49.9,
+      price: 24.9,
       badge: "",
       paymentLink: "https://buy.stripe.com/REMPLACER_LIEN_1"
     },
     {
       id: "duo",
       qty: 2,
-      title: "2 brosses",
+      title: "2 applicateurs",
       subtitle: "Une pour vous, une à offrir",
-      price: 84.9,
+      price: 39.9,
       badge: "Le plus choisi",
       paymentLink: "https://buy.stripe.com/REMPLACER_LIEN_2"
     },
     {
       id: "trio",
       qty: 3,
-      title: "3 brosses",
+      title: "3 applicateurs",
       subtitle: "Pour toute la famille",
-      price: 114.9,
+      price: 49.9,
       badge: "Meilleure économie",
       paymentLink: "https://buy.stripe.com/REMPLACER_LIEN_3"
     }
