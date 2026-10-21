@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Livraison et retours — Novéa</title>
+  <meta name="robots" content="index,follow">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">Novéa</a>
+      <a href="index.html#acheter" class="btn btn--small">Commander</a>
+    </div>
+  </header>
+  <main class="legal">
+    <div class="container container--narrow">
+<h1>Livraison &amp; retours</h1>
+<h2>Livraison</h2>
+<ul>
+  <li>Livraison <strong>offerte</strong> en France métropolitaine, sans minimum.</li>
+  <li>Préparation sous 24 à 48 h ouvrées.</li>
+  <li>Délai indicatif : <span data-delivery></span>.</li>
+  <li>Un numéro de suivi vous est envoyé par e-mail dès l'expédition.</li>
+</ul>
+<h2>Retours — satisfait ou remboursé 30 jours</h2>
+<ol>
+  <li>Écrivez-nous à <a data-store-email href="#"></a> dans les 30 jours suivant la réception, avec votre numéro de commande.</li>
+  <li>Nous vous envoyons l'adresse de retour et la marche à suivre.</li>
+  <li>Vous êtes remboursé sous 14 jours maximum, sur votre moyen de paiement d'origine.</li>
+</ol>
+<h2>Produit défectueux ou abîmé</h2>
+<p>Envoyez-nous une photo par e-mail : nous vous renvoyons un produit neuf ou vous remboursons, sans retour nécessaire dans la plupart des cas.</p>
+<script>document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("[data-delivery]").forEach(function(e){e.textContent=STORE.delivery.toLowerCase();});});</script>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div><div class="logo logo--light">Novéa</div><p><a data-store-email href="#"></a></p></div>
+      <nav>
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="cgv.html">Conditions générales de vente</a>
+        <a href="retours.html">Livraison &amp; retours</a>
+        <a href="confidentialite.html">Confidentialité</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="config.js"></script>
+  <script>
+    document.querySelectorAll("[data-store-email]").forEach(function (el) {
+      el.textContent = STORE.email; el.href = "mailto:" + STORE.email;
+    });
+  </script>
+</body>
+</html>

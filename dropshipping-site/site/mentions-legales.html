@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mentions légales — Novéa</title>
+  <meta name="robots" content="index,follow">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">Novéa</a>
+      <a href="index.html#acheter" class="btn btn--small">Commander</a>
+    </div>
+  </header>
+  <main class="legal">
+    <div class="container container--narrow">
+<h1>Mentions légales</h1>
+<p class="note">⚠️ Modèle à compléter : remplace tous les champs entre [crochets] avant la mise en ligne.</p>
+<h2>Éditeur du site</h2>
+<p>[Nom Prénom], entrepreneur individuel (micro-entreprise)<br>
+SIRET : [numéro SIRET]<br>
+Adresse : [adresse postale ou adresse de domiciliation]<br>
+E-mail : <a data-store-email href="#"></a><br>
+Numéro de TVA intracommunautaire : [numéro, ou « TVA non applicable, art. 293 B du CGI »]<br>
+Directeur de la publication : [Nom Prénom]</p>
+<h2>Hébergeur</h2>
+<p>[Netlify, Inc. — 512 2nd Street, Suite 200, San Francisco, CA 94107, États-Unis]<br>
+(adapte si tu utilises un autre hébergeur : Cloudflare Pages, GitHub Pages…)</p>
+<h2>Propriété intellectuelle</h2>
+<p>Les textes, logos et visuels de ce site sont la propriété de l'éditeur ou utilisés avec autorisation. Toute reproduction sans accord préalable est interdite.</p>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div><div class="logo logo--light">Novéa</div><p><a data-store-email href="#"></a></p></div>
+      <nav>
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="cgv.html">Conditions générales de vente</a>
+        <a href="retours.html">Livraison &amp; retours</a>
+        <a href="confidentialite.html">Confidentialité</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="config.js"></script>
+  <script>
+    document.querySelectorAll("[data-store-email]").forEach(function (el) {
+      el.textContent = STORE.email; el.href = "mailto:" + STORE.email;
+    });
+  </script>
+</body>
+</html>
