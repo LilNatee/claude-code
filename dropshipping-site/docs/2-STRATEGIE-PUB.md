@@ -70,7 +70,7 @@ Titre conseillé : `Applicateur huile et sérum cuir chevelu – embouts massant
 - Envoie **10 messages par jour** pendant une semaine. Objectif : 8 à 10 « oui ».
 - Message type :
 
-  > Bonjour [prénom] ! J'adore ta routine cheveux [détail précis d'une de ses vidéos]. Je lance Novéa, une
+  > Bonjour [prénom] ! J'adore ta routine cheveux [détail précis d'une de ses vidéos]. Je lance Racinéa, une
   > petite marque d'applicateur massant pour sérums et huiles capillaires. J'aimerais t'en offrir une, sans
   > aucune obligation. Si elle te plaît et que tu en parles, je te donne en plus un code -15 % pour ta
   > communauté. Ça te dit ?

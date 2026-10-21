@@ -10,7 +10,7 @@ Coche au fur et à mesure. Temps estimé pour être en ligne : **1 à 2 semaines
 - [ ] Ouvrir un **compte bancaire dédié** (gratuit en banque en ligne). Obligatoire dès 10 000 € de CA 2 années de suite, mais fais-le tout de suite : c'est plus simple.
 - [ ] Choisir un **médiateur de la consommation** (obligatoire, ≈ 50-100 €/an, ex. CNPM, Médicys…) — à indiquer dans les CGV.
 - [ ] ~~Inscription DEEE~~ : pas nécessaire pour l'applicateur manuel (aucune électronique). À faire seulement si tu ajoutes un jour une version électrique.
-- [ ] Vérifier la disponibilité du nom « Novéa » sur [data.inpi.fr](https://data.inpi.fr) (classe 8/21/3). S'il est pris, change-le dans `config.js` et dans les fichiers HTML (rechercher/remplacer « Novéa »).
+- [ ] Vérifier la disponibilité du nom « Racinéa » sur [data.inpi.fr](https://data.inpi.fr) (classe 8/21/3). S'il est pris, change-le dans `config.js` et dans les fichiers HTML (rechercher/remplacer « Racinéa »).
 
 ## Étape 2 — Fournisseur et échantillon (jours 1 à 10, ≈ 25 €)
 
@@ -34,7 +34,7 @@ Coche au fur et à mesure. Temps estimé pour être en ligne : **1 à 2 semaines
 ## Étape 4 — Paiement Stripe (1 h, 0 € d'abonnement)
 
 - [ ] Créer un compte sur [stripe.com](https://stripe.com) (pays : France), activer le compte avec ton SIRET et ton IBAN.
-- [ ] Dans **Catalogue de produits** : créer le produit « Applicateur Massant Novéa » avec **3 prix** : 24,90 € / 39,90 € (lot de 2) / 49,90 € (lot de 3).
+- [ ] Dans **Catalogue de produits** : créer le produit « Applicateur Massant Racinéa » avec **3 prix** : 24,90 € / 39,90 € (lot de 2) / 49,90 € (lot de 3).
 - [ ] Créer **3 Liens de paiement** (*Payment Links*), un par prix. Pour chacun, dans les options :
   - ✅ Collecter l'**adresse de livraison** → pays autorisés : **France** (ajoute Belgique/Suisse plus tard si tu veux)
   - ✅ Exiger le **numéro de téléphone** (utile au transporteur)
@@ -55,7 +55,7 @@ Coche au fur et à mesure. Temps estimé pour être en ligne : **1 à 2 semaines
 
 ## Étape 6 — Mise en ligne (30 min, ≈ 10 €/an)
 
-- [ ] Acheter un nom de domaine (OVH, Gandi, Namecheap…), ex. `novea-shop.fr`.
+- [ ] Acheter un nom de domaine (OVH, Gandi, Namecheap…), ex. `racinea.fr`.
 - [ ] Créer une adresse e-mail pro (souvent incluse chez OVH, ou Zoho Mail gratuit) : `contact@ton-domaine.fr`.
 - [ ] Héberger gratuitement sur **Netlify** : va sur [app.netlify.com/drop](https://app.netlify.com/drop) et **glisse le dossier `site`**. C'est en ligne en 30 secondes.
 - [ ] Netlify → *Domain settings* → ajouter ton domaine, suivre les instructions DNS. Le HTTPS (cadenas) est automatique.
@@ -69,10 +69,10 @@ Coche au fur et à mesure. Temps estimé pour être en ligne : **1 à 2 semaines
 3. Quand CJ te donne le **numéro de suivi** (1-3 jours), envoie-le au client :
 
    > Bonjour [prénom],
-   > Bonne nouvelle : votre applicateur Novéa est en route ! 📦
+   > Bonne nouvelle : votre applicateur Racinéa est en route ! 📦
    > Suivi : [lien de suivi]
    > Livraison estimée : [date]. Une question ? Répondez simplement à cet e-mail.
-   > L'équipe Novéa
+   > L'équipe Racinéa
 
 4. Garde un tableau (Google Sheets) : date, client, montant, coût CJ, n° de suivi, statut. Ça te sert pour la déclaration URSSAF (mensuelle ou trimestrielle).
 
@@ -80,7 +80,7 @@ Coche au fur et à mesure. Temps estimé pour être en ligne : **1 à 2 semaines
 
 ## Étape 8 — Obtenir tes premiers VRAIS avis (semaines 2 à 6)
 
-- [ ] Créer un **Google Form** « Votre avis sur Novéa » (note 1-5, texte, prénom + initiale, ville, accord pour publication).
+- [ ] Créer un **Google Form** « Votre avis sur Racinéa » (note 1-5, texte, prénom + initiale, ville, accord pour publication).
 - [ ] **J+10 après livraison**, envoyer à chaque client :
 
   > Bonjour [prénom], vous utilisez votre applicateur depuis quelques jours : qu'en pensez-vous ?

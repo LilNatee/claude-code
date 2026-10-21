@@ -112,7 +112,7 @@
     box.innerHTML =
       '<div class="reviews-empty">' +
         "<p><strong>Soyez parmi les premiers à donner votre avis.</strong></p>" +
-        "<p>Novéa vient d'être lancé. Chaque avis publié ici provient d'un client ayant réellement acheté et reçu sa commande. " +
+        "<p>Racinéa vient d'être lancé. Chaque avis publié ici provient d'un client ayant réellement acheté et reçu sa commande. " +
         "Après votre commande, vous recevrez une invitation à partager votre expérience.</p>" +
       "</div>";
     return;

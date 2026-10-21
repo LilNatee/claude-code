@@ -1,6 +1,6 @@
-# Novéa — boutique dropshipping prête à l'emploi
+# Racinéa — boutique dropshipping prête à l'emploi
 
-Site one-product pour la **brosse massante cuir chevelu LED avec réservoir à sérum**, avec paiement Stripe,
+Site one-product pour l'**applicateur massant de sérum et d'huile pour cuir chevelu**, avec paiement Stripe,
 pages légales françaises et toute la stratégie de lancement.
 
 ## Contenu
