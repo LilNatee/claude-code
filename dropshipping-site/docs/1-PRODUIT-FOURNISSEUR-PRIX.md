@@ -11,7 +11,7 @@ plus tard comme modèle « Pro », une fois des avis récoltés et un fournisseu
 | | |
 |---|---|
 | Fiche CJ | https://m.cjdropshipping.com/product/details/1422744344611393536 |
-| SKU | CJJT123875103CX — variante Black |
+| SKU | CJJT123875103CX — **variante Champagne** (couleur affichée sur le site ; vérifie son prix, il peut différer du noir) |
 | Produit | Applicateur manuel, ABS, 5,8 × 5,8 × 6 cm, réservoir 30 ml, ouverture 16 mm, 15 embouts diffuseurs + 6 picots de massage, capuchon souple à presser, sans pile |
 | Prix produit | 4,05 $ (mis à jour le 4 septembre 2026), aucun litige qualité, 388 boutiques le listent |
 | Expédition | **CJPacket Ordinary** : 4,48 $ + 3,50 $ de TVA payée d'avance → client ne paie rien à la livraison, **4-10 jours** |

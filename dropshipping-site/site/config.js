@@ -18,7 +18,7 @@ window.STORE = {
   unitLabel: "pièce",
 
   // Photos de la galerie (la 1re est la principale). Mets tes fichiers dans assets/.
-  photos: ["assets/product.svg"],
+  photos: ["assets/photo-1.jpg", "assets/photo-2.jpg", "assets/photo-3.jpg", "assets/photo-4.jpg"],
   // Vidéo produit (optionnelle) : "assets/video.mp4". Laisse "" pour ne pas en afficher.
   video: "",
   videoPoster: "", // image affichée avant lecture (par défaut : 1re photo)
