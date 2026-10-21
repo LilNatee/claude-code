@@ -63,7 +63,9 @@
   function buy() {
     var link = selected.paymentLink || "";
     if (link.indexOf("REMPLACER") !== -1 || !/^https:\/\//.test(link)) {
-      alert("Boutique en cours de configuration : le lien de paiement Stripe n'est pas encore renseigné dans config.js.");
+      var msg = document.getElementById("buyMsg");
+      msg.hidden = false;
+      msg.scrollIntoView({ block: "center", behavior: "smooth" });
       return;
     }
     window.location.href = link;
