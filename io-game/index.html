@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>Gloop.io</title>
+<meta name="description" content="Gloop.io : mange, grossis et deviens le plus gros blob de l'arène. Jeu .io gratuit dans le navigateur, sur ordinateur et mobile.">
+<meta property="og:title" content="Gloop.io">
+<meta property="og:description" content="Mange, grossis, domine l'arène. Jeu .io gratuit.">
+<meta name="theme-color" content="#0b1020">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;700&display=swap">
+<!--
+  MONÉTISATION — choisis UNE option (voir README.md) :
+  1) Google H5 Games Ads (ton propre domaine) : décommente et remplace ca-pub-XXXX
+  <script async data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-adbreak-test="on"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>window.adsbygoogle=window.adsbygoogle||[];var adBreak=adConfig=function(o){adsbygoogle.push(o);};adConfig({preloadAdBreaks:'on'});</script>
+  2) CrazyGames : <script src="https://sdk.crazygames.com/crazygames-sdk-v3.js"></script>
+  3) Poki      : <script src="https://game-cdn.poki.com/scripts/v2/poki-sdk.js"></script>
+-->
+<style>
+/* Layout : canvas plein écran, HUD flottant dans les coins, menu centré par-dessus. */
+:root {
+  --night: #0b1020;      /* fond de l'arène */
+  --grid: #18213d;       /* lignes de la grille */
+  --ink: #f2f4ff;        /* texte */
+  --muted: #8f9bc7;      /* texte secondaire */
+  --goo: #7cf5c4;        /* accent principal (vert gelée) */
+  --pop: #ff6fae;        /* accent secondaire */
+  --panel: rgba(15, 22, 46, .82);
+  --display: "Baloo 2", "Trebuchet MS", system-ui, sans-serif;
+  --body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { height: 100%; margin: 0; overflow: hidden; background: var(--night); color: var(--ink); font-family: var(--body); touch-action: none; -webkit-user-select: none; user-select: none; }
+canvas { display: block; width: 100%; height: 100%; }
+button { font: inherit; cursor: pointer; }
+button:focus-visible, input:focus-visible { outline: 3px solid var(--goo); outline-offset: 2px; }
+
+.hud { position: fixed; pointer-events: none; font-variant-numeric: tabular-nums; }
+#score { left: max(12px, env(safe-area-inset-left, 0px)); bottom: calc(12px + env(safe-area-inset-bottom, 0px)); font: 800 1.5rem/1 var(--display); text-shadow: 0 2px 8px #000a; }
+#score small { display: block; font: 600 .75rem var(--body); color: var(--muted); letter-spacing: .08em; text-transform: uppercase; }
+#board { right: max(12px, env(safe-area-inset-right, 0px)); top: calc(12px + env(safe-area-inset-top, 0px)); background: var(--panel); border-radius: 12px; padding: 10px 14px; min-width: 170px; font-size: .85rem; }
+#board h3 { margin: 0 0 6px; font: 800 .9rem var(--display); color: var(--goo); letter-spacing: .06em; text-transform: uppercase; }
+#board ol { margin: 0; padding-left: 1.4em; display: grid; gap: 2px; }
+#board li.me { color: var(--goo); font-weight: 700; }
+#mini { left: max(12px, env(safe-area-inset-left, 0px)); top: calc(12px + env(safe-area-inset-top, 0px)); width: 110px; height: 110px; border-radius: 10px; background: var(--panel); }
+#boost { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); width: 76px; height: 76px; border-radius: 50%; border: 0; background: var(--pop); color: #fff; font: 800 1rem var(--display); box-shadow: 0 6px 20px #ff6fae55; display: none; }
+.touch #boost { display: block; }
+
+.overlay { position: fixed; inset: 0; display: grid; place-items: center; padding: 16px max(16px, env(safe-area-inset-right, 0px)) 16px max(16px, env(safe-area-inset-left, 0px)); background: radial-gradient(ellipse at center, #0b1020bb, #0b1020ee); }
+.card { width: min(420px, 100%); display: grid; gap: 14px; text-align: center; }
+.logo { font: 800 clamp(3rem, 14vw, 5.2rem)/.9 var(--display); margin: 0; color: var(--goo); text-shadow: 0 6px 0 #2a8f6b, 0 12px 30px #7cf5c455; letter-spacing: -.02em; }
+.logo span { color: var(--pop); text-shadow: 0 6px 0 #a83a6f; }
+.tag { margin: 0; color: var(--muted); }
+#nick { width: 100%; padding: 14px 16px; border-radius: 14px; border: 2px solid var(--grid); background: #121a33; color: var(--ink); font: 700 1.1rem var(--body); text-align: center; }
+.colors { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+.colors button { width: 34px; height: 34px; border-radius: 50%; border: 3px solid transparent; }
+.colors button[aria-pressed="true"] { border-color: var(--ink); transform: scale(1.12); }
+.play { padding: 16px; border: 0; border-radius: 16px; background: var(--goo); color: #08251a; font: 800 1.5rem var(--display); box-shadow: 0 6px 0 #2a8f6b; transition: transform .08s; }
+.play:active { transform: translateY(4px); box-shadow: 0 2px 0 #2a8f6b; }
+.ghost { padding: 12px; border-radius: 14px; border: 2px solid var(--pop); background: transparent; color: var(--pop); font: 800 1.1rem var(--display); }
+.help { font-size: .85rem; color: var(--muted); margin: 0; }
+.stats { display: flex; justify-content: center; gap: 28px; font-variant-numeric: tabular-nums; }
+.stats b { display: block; font: 800 2rem var(--display); }
+.stats span { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+/* Emplacement bannière (menu uniquement — interdit sur CrazyGames/Poki, utile sur ton propre domaine) */
+.ad-slot { min-height: 0; }
+.ad-slot:not(:empty) { min-height: 90px; }
+#adwait { font: 800 1.3rem var(--display); }
+@media (max-width: 560px) { #board { min-width: 0; font-size: .75rem; padding: 8px 10px; } #mini { width: 80px; height: 80px; } }
+@media (prefers-reduced-motion: reduce) { .play { transition: none; } }
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div class="hud" id="score"><small>Masse</small><span id="mass">0</span></div>
+<div class="hud" id="board" hidden><h3>Classement</h3><ol id="lb"></ol></div>
+<canvas class="hud" id="mini" width="110" height="110" hidden></canvas>
+<button id="boost" type="button" hidden>BOOST</button>
+
+<div class="overlay" id="menu">
+  <div class="card">
+    <h1 class="logo">Gloop<span>.io</span></h1>
+    <p class="tag">Mange les billes, avale les plus petits, fuis les plus gros.</p>
+    <input id="nick" maxlength="14" placeholder="Ton pseudo" autocomplete="off">
+    <div class="colors" id="colors"></div>
+    <button class="play" id="play" type="button">JOUER</button>
+    <p class="help">Souris ou doigt pour diriger · Espace / clic / bouton BOOST pour accélérer (coûte de la masse)</p>
+    <p class="help" id="best"></p>
+    <div class="ad-slot" id="ad-menu"><!-- Bannière AdSense ici si tu héberges sur ton domaine --></div>
+  </div>
+</div>
+
+<div class="overlay" id="dead" hidden>
+  <div class="card">
+    <h2 class="logo" style="font-size:3rem">Avalé !</h2>
+    <p class="tag" id="killer"></p>
+    <div class="stats">
+      <div><b id="d-mass">0</b><span>Masse max</span></div>
+      <div><b id="d-kills">0</b><span>Victimes</span></div>
+      <div><b id="d-time">0s</b><span>Survie</span></div>
+    </div>
+    <button class="play" id="revive" type="button">▶ Revivre (pub)</button>
+    <button class="ghost" id="again" type="button">Rejouer</button>
+  </div>
+</div>
+
+<div class="overlay" id="adwait" hidden><div class="card"><p>Publicité… <span id="adcount">3</span></p><p class="help">Mode démo : aucune régie configurée.</p></div></div>
+
+<script>
+/* ========= Régie publicitaire : un seul point d'entrée pour toutes les plateformes ========= */
+const Ads = (() => {
+  const $ = id => document.getElementById(id);
+  const hasCG = () => window.CrazyGames && window.CrazyGames.SDK;
+  const hasPoki = () => typeof window.PokiSDK !== 'undefined';
+  const hasH5 = () => typeof window.adBreak === 'function';
+  let pokiReady = Promise.resolve();
+
+  async function init() {
+    try {
+      if (hasCG()) await window.CrazyGames.SDK.init();
+      else if (hasPoki()) pokiReady = PokiSDK.init().catch(() => {});
+    } catch (e) { /* le jeu marche sans pub */ }
+  }
+  // Pub simulée pour tester en local : 3 s d'attente.
+  function fake(done) {
+    const box = $('adwait'); let n = 3; box.hidden = false; $('adcount').textContent = n;
+    const t = setInterval(() => { n--; $('adcount').textContent = n; if (n <= 0) { clearInterval(t); box.hidden = true; done(true); } }, 1000);
+  }
+  function gameplayStart() { try { if (hasCG()) CrazyGames.SDK.game.gameplayStart(); else if (hasPoki()) PokiSDK.gameplayStart(); } catch (e) {} }
+  function gameplayStop() { try { if (hasCG()) CrazyGames.SDK.game.gameplayStop(); else if (hasPoki()) PokiSDK.gameplayStop(); } catch (e) {} }
+
+  // Pub entre deux parties (interstitielle). Résout quand le jeu peut reprendre.
+  function midroll() {
+    return new Promise(res => {
+      try {
+        if (hasCG()) return CrazyGames.SDK.ad.requestAd('midgame', { adFinished: res, adError: res });
+        if (hasPoki()) return pokiReady.then(() => PokiSDK.commercialBreak()).then(res, res);
+        if (hasH5()) return adBreak({ type: 'next', name: 'replay', adBreakDone: res });
+      } catch (e) {}
+      res(); // sans régie : pas d'interstitielle
+    });
+  }
+  // Pub récompensée. Résout true si la récompense doit être donnée.
+  function rewarded() {
+    return new Promise(res => {
+      try {
+        if (hasCG()) return CrazyGames.SDK.ad.requestAd('rewarded', { adFinished: () => res(true), adError: () => res(false) });
+        if (hasPoki()) return pokiReady.then(() => PokiSDK.rewardedBreak()).then(ok => res(!!ok), () => res(false));
+        if (hasH5()) {
+          let granted = false;
+          return adBreak({ type: 'reward', name: 'revive',
+            beforeReward: show => show(), adViewed: () => { granted = true; }, adDismissed: () => {},
+            adBreakDone: () => res(granted) });
+        }
+      } catch (e) {}
+      fake(res);
+    });
+  }
+  return { init, midroll, rewarded, gameplayStart, gameplayStop };
+})();
+
+/* ================================ Jeu ================================ */
+const W_SIZE = 4000, PELLETS = 1000, BOTS = 28, START_MASS = 12;
+const COLORS = ['#7cf5c4', '#ff6fae', '#ffd166', '#6ec3ff', '#b28dff', '#ff8a5b', '#9cff6e', '#5ef0ff'];
+const NAMES = ['Blobby', 'Gélatine', 'xXSlimeXx', 'Mochi', 'Bulle', 'NomNom', 'Jelly', 'Pudding', 'Glouton', 'Kiwi', 'Zorg', 'Pixel', 'Flan', 'Gluant', 'Boba', 'Toxic', 'Nuage', 'Mr.Goo', 'Tapioca', 'Bonbon', 'Lumi', 'Ninja', 'Choco', 'Pépite', 'Yuzu', 'Méduse', 'Turbo', 'Pastèque', 'Gummy', 'Krill'];
+
+const cv = document.getElementById('c'), ctx = cv.getContext('2d');
+const mini = document.getElementById('mini'), mctx = mini.getContext('2d');
+const $ = id => document.getElementById(id);
+let W = 0, H = 0, DPR = 1;
+function resize() { DPR = Math.min(2, window.devicePixelRatio || 1); W = innerWidth; H = innerHeight; cv.width = W * DPR; cv.height = H * DPR; }
+addEventListener('resize', resize); resize();
+
+const store = { get(k, d) { try { const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} } };
+
+const rand = (a, b) => a + Math.random() * (b - a);
+const radius = m => 4 + Math.sqrt(m) * 5.2;
+const speedOf = m => 330 * Math.pow(m, -0.22);
+
+let pellets = [], cells = [], me = null, running = false, cam = { x: W_SIZE / 2, y: W_SIZE / 2, z: 1 };
+let pointer = { x: 0, y: 0 }, boosting = false, games = 0, stats = null;
+let myColor = store.get('gloop.color', COLORS[0]);
+
+function newPellet() { return { x: rand(0, W_SIZE), y: rand(0, W_SIZE), c: COLORS[(Math.random() * COLORS.length) | 0], m: 1 }; }
+function newCell(name, color, mass, isBot) {
+  return { name, color, mass, x: rand(200, W_SIZE - 200), y: rand(200, W_SIZE - 200), vx: 0, vy: 0, bot: isBot, alive: true, tx: 0, ty: 0, think: 0, shield: 0, wob: Math.random() * 6 };
+}
+function spawnBot(list = cells) {
+  const used = new Set(list.map(c => c.name));
+  const name = NAMES.find(n => !used.has(n)) || 'Blob' + ((Math.random() * 999) | 0);
+  const c = newCell(name, COLORS[(Math.random() * COLORS.length) | 0], rand(8, 60) * (Math.random() < .15 ? 4 : 1), true);
+  c.tx = c.x; c.ty = c.y; c.shield = 1.5; return c;
+}
+
+function startGame(reviveMass) {
+  if (!reviveMass) {
+    pellets = Array.from({ length: PELLETS }, newPellet);
+    cells = []; for (let i = 0; i < BOTS; i++) cells.push(spawnBot());
+    stats = { maxMass: START_MASS, kills: 0, t0: performance.now() };
+  }
+  const nick = ($('nick').value.trim() || 'Toi').slice(0, 14);
+  store.set('gloop.nick', nick);
+  me = newCell(nick, myColor, reviveMass || START_MASS, false);
+  // Apparition à l'écart des gros blobs pour ne pas mourir dès l'arrivée.
+  for (let i = 0; i < 30; i++) {
+    if (!cells.some(c => c.mass > me.mass && Math.hypot(c.x - me.x, c.y - me.y) < 700)) break;
+    me.x = rand(200, W_SIZE - 200); me.y = rand(200, W_SIZE - 200);
+  }
+  me.shield = 3;
+  pointer.x = W / 2; pointer.y = H / 2;
+  cells.push(me);
+  cam.x = me.x; cam.y = me.y;
+  $('menu').hidden = true; $('dead').hidden = true;
+  $('board').hidden = false; mini.hidden = false; $('boost').hidden = false;
+  running = true; Ads.gameplayStart();
+}
+
+function die(killer) {
+  running = false; me.alive = false; Ads.gameplayStop();
+  const secs = Math.round((performance.now() - stats.t0) / 1000);
+  const best = store.get('gloop.best', 0);
+  if (stats.maxMass > best) store.set('gloop.best', Math.floor(stats.maxMass));
+  $('killer').textContent = killer ? `Mangé par ${killer.name}` : '';
+  $('d-mass').textContent = Math.floor(stats.maxMass);
+  $('d-kills').textContent = stats.kills;
+  $('d-time').textContent = secs + 's';
+  $('revive').hidden = stats.revived === true; // une seule résurrection par partie
+  $('dead').hidden = false; $('board').hidden = true; mini.hidden = true; $('boost').hidden = true;
+}
+
+/* ---------- Entrées ---------- */
+const isTouch = matchMedia('(pointer: coarse)').matches;
+if (isTouch) document.body.classList.add('touch');
+cv.addEventListener('pointermove', e => { pointer.x = e.clientX; pointer.y = e.clientY; });
+cv.addEventListener('pointerdown', e => { pointer.x = e.clientX; pointer.y = e.clientY; if (!isTouch) boosting = true; });
+addEventListener('pointerup', () => { if (!isTouch) boosting = false; });
+addEventListener('keydown', e => { if (e.code === 'Space' && running) { boosting = true; e.preventDefault(); } if (e.code === 'Enter' && !$('menu').hidden) $('play').click(); });
+addEventListener('keyup', e => { if (e.code === 'Space') boosting = false; });
+const bb = $('boost');
+bb.addEventListener('pointerdown', e => { boosting = true; e.stopPropagation(); });
+bb.addEventListener('pointerup', () => boosting = false);
+bb.addEventListener('pointerleave', () => boosting = false);
+
+/* ---------- IA des bots ---------- */
+function botThink(b) {
+  const r = radius(b.mass), sight = 350 + r * 3;
+  let threat = null, td = Infinity, prey = null, pd = Infinity;
+  for (const o of cells) {
+    if (o === b || !o.alive) continue;
+    const d = Math.hypot(o.x - b.x, o.y - b.y);
+    if (d > sight) continue;
+    if (o.mass > b.mass * 1.25 && d < td) { threat = o; td = d; }
+    else if (b.mass > o.mass * 1.25 && o.shield <= 0 && d < pd) { prey = o; pd = d; }
+  }
+  if (threat && td < sight * 0.7) { b.tx = b.x - (threat.x - b.x) * 3; b.ty = b.y - (threat.y - b.y) * 3; b.boost = td < radius(threat.mass) + r + 80 && b.mass > 25; return; }
+  b.boost = false;
+  if (prey) { b.tx = prey.x; b.ty = prey.y; b.boost = pd < 220 && b.mass > 40 && Math.random() < .4; return; }
+  let best = null, bd = Infinity;
+  for (const p of pellets) { const d = (p.x - b.x) ** 2 + (p.y - b.y) ** 2; if (d < bd) { bd = d; best = p; } }
+  if (best) { b.tx = best.x + rand(-40, 40); b.ty = best.y + rand(-40, 40); }
+}
+
+/* ---------- Simulation ---------- */
+function update(dt) {
+  if (running) {
+    const wx = cam.x + (pointer.x - W / 2) / cam.z, wy = cam.y + (pointer.y - H / 2) / cam.z;
+    me.tx = wx; me.ty = wy; me.boost = boosting;
+  }
+  for (const c of cells) {
+    if (!c.alive) continue;
+    if (c.bot && (c.think -= dt) <= 0) { botThink(c); c.think = rand(.15, .35); }
+    const dx = c.tx - c.x, dy = c.ty - c.y, d = Math.hypot(dx, dy);
+    let sp = speedOf(c.mass);
+    if (c.boost && c.mass > 15) { sp *= 1.8; c.mass -= c.mass * 0.35 * dt; if (Math.random() < dt * 12) pellets.push({ x: c.x - dx / d * radius(c.mass), y: c.y - dy / d * radius(c.mass), c: c.color, m: 1 }); }
+    const k = Math.min(1, d / (radius(c.mass) + 40));
+    const tvx = d > 1 ? dx / d * sp * k : 0, tvy = d > 1 ? dy / d * sp * k : 0;
+    c.vx += (tvx - c.vx) * Math.min(1, dt * 8); c.vy += (tvy - c.vy) * Math.min(1, dt * 8);
+    c.x = Math.max(0, Math.min(W_SIZE, c.x + c.vx * dt)); c.y = Math.max(0, Math.min(W_SIZE, c.y + c.vy * dt));
+    if (c.mass > 120) c.mass -= c.mass * 0.004 * dt; // légère perte pour éviter un gros invincible
+    if (c.shield > 0) c.shield -= dt;
+    c.wob += dt * 3;
+  }
+  // Billes
+  for (const c of cells) {
+    if (!c.alive) continue;
+    const r = radius(c.mass), r2 = r * r;
+    for (let i = pellets.length - 1; i >= 0; i--) {
+      const p = pellets[i], dx = p.x - c.x, dy = p.y - c.y;
+      if (dx * dx + dy * dy < r2) { c.mass += p.m; pellets[i] = pellets[pellets.length - 1]; pellets.pop(); }
+    }
+  }
+  while (pellets.length < PELLETS) pellets.push(newPellet());
+  // Cellules entre elles
+  for (const a of cells) {
+    if (!a.alive) continue;
+    const ra = radius(a.mass);
+    for (const b of cells) {
+      if (a === b || !b.alive || b.shield > 0 || a.mass < b.mass * 1.2) continue;
+      if (Math.hypot(a.x - b.x, a.y - b.y) < ra - radius(b.mass) * 0.35) {
+        a.mass += b.mass * 0.9; b.alive = false;
+        if (a === me) stats.kills++;
+        if (b === me) die(a);
+      }
+    }
+  }
+  cells = cells.filter(c => c.alive || c === me && running);
+  while (cells.filter(c => c.bot).length < BOTS) cells.push(spawnBot());
+  if (running && me.mass > stats.maxMass) stats.maxMass = me.mass;
+
+  // Caméra
+  const focus = running ? me : (cells.slice().sort((a, b) => b.mass - a.mass)[0] || cam);
+  const fr = focus.mass ? radius(focus.mass) : 30;
+  const base = Math.max(W, H) / 1500;
+  const tz = base * Math.max(0.35, Math.min(1.3, 1.25 - fr / 260));
+  cam.x += (focus.x - cam.x) * Math.min(1, dt * 6); cam.y += (focus.y - cam.y) * Math.min(1, dt * 6);
+  cam.z += (tz - cam.z) * Math.min(1, dt * 2);
+}
+
+/* ---------- Rendu ---------- */
+function drawCell(c) {
+  const r = radius(c.mass);
+  ctx.save(); ctx.translate(c.x, c.y);
+  ctx.beginPath();
+  const n = 28;
+  for (let i = 0; i <= n; i++) {
+    const a = i / n * Math.PI * 2, rr = r * (1 + 0.03 * Math.sin(a * 5 + c.wob));
+    i ? ctx.lineTo(Math.cos(a) * rr, Math.sin(a) * rr) : ctx.moveTo(rr, 0);
+  }
+  ctx.fillStyle = c.color; ctx.fill();
+  ctx.lineWidth = Math.max(3, r * 0.08); ctx.strokeStyle = 'rgba(0,0,0,.25)'; ctx.stroke();
+  // reflet
+  ctx.beginPath(); ctx.ellipse(-r * .35, -r * .4, r * .22, r * .12, -0.6, 0, Math.PI * 2); ctx.fillStyle = 'rgba(255,255,255,.35)'; ctx.fill();
+  if (c.shield > 0) { ctx.beginPath(); ctx.arc(0, 0, r + 6, 0, Math.PI * 2); ctx.strokeStyle = 'rgba(255,255,255,.5)'; ctx.setLineDash([8, 8]); ctx.lineWidth = 3; ctx.stroke(); ctx.setLineDash([]); }
+  const fs = Math.max(12, r * 0.42);
+  ctx.font = `800 ${fs}px "Baloo 2", sans-serif`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  ctx.lineWidth = fs / 6; ctx.strokeStyle = 'rgba(0,0,0,.55)'; ctx.strokeText(c.name, 0, 0);
+  ctx.fillStyle = '#fff'; ctx.fillText(c.name, 0, 0);
+  ctx.restore();
+}
+
+function render() {
+  ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  ctx.fillStyle = '#0b1020'; ctx.fillRect(0, 0, W, H);
+  ctx.translate(W / 2, H / 2); ctx.scale(cam.z, cam.z); ctx.translate(-cam.x, -cam.y);
+  // grille
+  const vx0 = cam.x - W / 2 / cam.z, vy0 = cam.y - H / 2 / cam.z, vx1 = cam.x + W / 2 / cam.z, vy1 = cam.y + H / 2 / cam.z;
+  ctx.strokeStyle = '#18213d'; ctx.lineWidth = 2 / cam.z; ctx.beginPath();
+  for (let x = Math.max(0, Math.floor(vx0 / 50) * 50); x <= Math.min(W_SIZE, vx1); x += 50) { ctx.moveTo(x, Math.max(0, vy0)); ctx.lineTo(x, Math.min(W_SIZE, vy1)); }
+  for (let y = Math.max(0, Math.floor(vy0 / 50) * 50); y <= Math.min(W_SIZE, vy1); y += 50) { ctx.moveTo(Math.max(0, vx0), y); ctx.lineTo(Math.min(W_SIZE, vx1), y); }
+  ctx.stroke();
+  ctx.strokeStyle = '#ff6fae'; ctx.lineWidth = 8; ctx.strokeRect(0, 0, W_SIZE, W_SIZE);
+  // billes
+  for (const p of pellets) {
+    if (p.x < vx0 - 10 || p.x > vx1 + 10 || p.y < vy0 - 10 || p.y > vy1 + 10) continue;
+    ctx.beginPath(); ctx.arc(p.x, p.y, 7, 0, Math.PI * 2); ctx.fillStyle = p.c; ctx.fill();
+  }
+  // cellules (les petites dessus des grosses = lisible)
+  const vis = cells.filter(c => c.alive).sort((a, b) => a.mass - b.mass);
+  for (const c of vis) { const r = radius(c.mass); if (c.x + r < vx0 || c.x - r > vx1 || c.y + r < vy0 || c.y - r > vy1) continue; drawCell(c); }
+
+  if (!running) return;
+  $('mass').textContent = Math.floor(me.mass);
+  // classement
+  const top = cells.filter(c => c.alive).sort((a, b) => b.mass - a.mass);
+  const rank = top.indexOf(me) + 1;
+  let html = top.slice(0, 8).map(c => `<li class="${c === me ? 'me' : ''}">${esc(c.name)}</li>`).join('');
+  if (rank > 8) html += `<li class="me" value="${rank}">${esc(me.name)}</li>`;
+  $('lb').innerHTML = html;
+  // minimap
+  const s = mini.width / W_SIZE;
+  mctx.clearRect(0, 0, mini.width, mini.height);
+  mctx.fillStyle = 'rgba(255,255,255,.12)'; mctx.fillRect(0, 0, mini.width, mini.height);
+  for (const c of top.slice(0, 5)) if (c !== me) { mctx.fillStyle = c.color + '99'; mctx.beginPath(); mctx.arc(c.x * s, c.y * s, 2 + radius(c.mass) * s, 0, 7); mctx.fill(); }
+  mctx.fillStyle = '#fff'; mctx.beginPath(); mctx.arc(me.x * s, me.y * s, 3.5, 0, 7); mctx.fill();
+}
+function esc(s) { return s.replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[ch]); }
+
+let last = performance.now();
+function loop(t) {
+  const dt = Math.min(0.05, (t - last) / 1000); last = t;
+  update(dt); render();
+  requestAnimationFrame(loop);
+}
+
+/* ---------- Menu ---------- */
+$('nick').value = store.get('gloop.nick', '');
+const best = store.get('gloop.best', 0);
+if (best) $('best').textContent = `Ton record : ${best}`;
+COLORS.forEach(col => {
+  const b = document.createElement('button');
+  b.type = 'button'; b.style.background = col; b.setAttribute('aria-label', 'Couleur ' + col);
+  b.setAttribute('aria-pressed', col === myColor);
+  b.onclick = () => { myColor = col; store.set('gloop.color', col); document.querySelectorAll('#colors button').forEach(x => x.setAttribute('aria-pressed', x === b)); };
+  $('colors').appendChild(b);
+});
+$('play').onclick = () => { games++; startGame(); };
+$('again').onclick = async () => {
+  games++;
+  if (games % 2 === 1) await Ads.midroll(); // une interstitielle toutes les 2 parties
+  startGame();
+};
+$('revive').onclick = async () => {
+  const ok = await Ads.rewarded();
+  if (!ok) return;
+  stats.revived = true;
+  cells = cells.filter(c => c !== me);
+  startGame(Math.max(START_MASS, Math.floor(stats.maxMass * 0.5)));
+};
+
+// Démo en arrière-plan derrière le menu : les bots jouent déjà.
+pellets = Array.from({ length: PELLETS }, newPellet);
+cells = []; for (let i = 0; i < BOTS; i++) cells.push(spawnBot());
+Ads.init();
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>
